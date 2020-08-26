@@ -1,6 +1,8 @@
-#include <Windows.h>
 #include <u8/string_operations.hpp>
 #include <vector>
+
+#ifdef _WIN32
+#include <Windows.h>
 
 namespace u8
 {
@@ -18,3 +20,11 @@ std::wstring toWString(const std::u8string& str)
 	return buf.data();
 }
 }
+#elif defined(linux)
+
+namespace u8
+{
+	
+}
+
+#endif
